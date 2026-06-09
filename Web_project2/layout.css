@@ -1,0 +1,808 @@
+/*
+
+filename: [layout.css]
+
+author: [Chan Jay Shen]
+
+created: [20/4/2026]
+
+last modified: [26/4/2026]
+
+description: [.css file for 4 html pages!]
+
+*/
+
+/* General Layout Settings */
+* {
+    margin: 0;
+    /* Resets default browser spacing */
+    padding: 0;
+    /* Resets internal spacing */
+    box-sizing: border-box;
+    /* Includes border and padding in the element's total width/height */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Set the general font for this website */
+    line-height: 1.6;
+    /* Sets the vertical distance between lines of text */
+    color: black;
+    /* Sets the default text color */
+    background: repeating-linear-gradient(135deg, #005eff, #ffffff 20%, #005eff 30%);
+    /* Creates a looping color pattern */
+}
+
+.index_bg {
+    background: repeating-linear-gradient(135deg, #005eff, #ffffff 37%);
+}
+
+/* --- HEADER STYLING --- */
+header {
+    background-color: #f8f8f8;
+    /* Sets a solid background color for header */
+    padding: 0px 5%;
+    display: flex;
+    /* Enables flexible layout to align children in rows or columns */
+    justify-content: space-between;
+    /* Spreads children with maximum space between them */
+    align-items: center;
+    /* Vertically aligns children in the middle of the container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Adds a shadow effect for depth */
+    position: sticky;
+    /* Keeps the element fixed when scrolling down */
+    top: 0;
+    /* Set the distance from the top for sticky elements */
+    z-index: 1000;
+    /* Sets the stack order; higher numbers appear in front of lower numbers */
+}
+
+.logo {
+    height: 150px;
+    /* Sets the vertical size of the logo */
+    width: 200px;
+    /* Sets the horizontal size of the logo */
+}
+
+.nav-menu {
+    list-style: none;
+    /* Removes bullet points or numbers from list */
+    display: flex;
+    gap: 20px;
+    /* Defines the size of the gap between flexible items */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    /* Removes visual text decorations like underlines */
+    color: #333;
+    font-weight: 600;
+    /* Controls the thickness of the text characters */
+    transition: color 0.3s;
+    /* Sets the duration and property for a smooth state change */
+}
+
+.nav-menu a:hover {
+    color: #3b82f6;
+}
+
+main {
+    width: 80%;
+    margin: 0px auto;
+}
+
+/* --- FOOTER STYLING --- */
+footer {
+    background-color: #1a1a1a;
+    color: #efefef;
+    padding: 40px 5% 20px;
+    margin-top: 50px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* Allows flexible items to drop to the next line if space is limited */
+    border-bottom: 1px solid #444;
+    /* Adds a line at the bottom of the element */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.copyright {
+    text-align: center;
+    /* Sets the text to the middle */
+    font-size: 0.9rem;
+    /* Sets the size of the font */
+    color: #777;
+}
+
+
+
+
+
+
+
+
+/* --- INDEX.HTML PAGE --- */
+
+/* --- LIVE BACKGROUND --- */
+.hero {
+    position: relative;
+    /* Set a coordinate system for absolute-positioned children */
+    height: 70vh;
+    /* Sets height to 70% of the user's total screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+    /* Clips any content that extends beyond the container's boundaries */
+    text-align: center;
+}
+
+#bg-video {
+    position: absolute;
+    /* Positions the element relative to its closest ancestor */
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Moves the element back by half its own width/height to center it */
+    min-width: 100%;
+    /* Ensures the element is at least as wide as its container */
+    min-height: 100%;
+    /* Ensures the element is at least as tall as its container */
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+    /* Forces the media to scale and fill the area without losing its aspect ratio */
+    pointer-events: none;
+    /* Makes the element "invisible" to interactions */
+}
+
+.hero::after {
+    content: "";
+    /* Make pseudo-element appear */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Sets a semi-transparent color using Red, Green, Blue, and Alpha */
+    z-index: 0;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    /* Allows the element to have width/height while sitting next to other text */
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    /* Rounds the corners of an border */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* Defines the duration for the transition */
+    position: relative;
+    z-index: 2;
+}
+
+.cta-button:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+    /* Change the size of the element */
+}
+
+.company-intro {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.text-block {
+    max-width: 500px;
+    /* Limits the maximum width of the element to prevent it from becoming too wide */
+    text-align: center;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: black;
+}
+
+.logo-link:hover {
+    color: darkblue;
+}
+
+.about_studio {
+    padding: 20px;
+}
+
+.studio {
+    border: 3.5px solid black;
+    /* Defines the thickness, style, and color of the border at once */
+}
+
+.para {
+    font-family: -apple-system, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+
+
+
+/* --- ABOUT.HTML PAGE --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Merges adjacent table borders into a single line */
+    margin: 20px 0;
+    font-family: -apple-system, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.first_table th,
+.first_table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    vertical-align: top;
+    /* Aligns content to the top of the table cell */
+    text-align: center;
+    color: black;
+}
+
+.first_table td ul {
+    list-style-type: none;
+    /* no dots */
+    padding-left: 0;
+    /* remove left indent */
+    margin: 0;
+    /* remove extra spacing */
+    text-align: center;
+}
+
+.first_table td li {
+    margin-bottom: 4px;
+    /* reduce spacing between items */
+}
+
+.first_table th {
+    background-color: #f2f2f2;
+}
+
+.first_table ul {
+    margin: 0;
+    padding: 20px;
+}
+
+/* Student IDs aligned right */
+.student-heading {
+    text-align: right;
+    /* moves the heading text to the right */
+    margin-right: 20px;
+    /* adds spacing from the edge */
+}
+
+.student-id {
+    text-align: right;
+    font-style: italic;
+    /* Tilts the text characters to the right */
+    color: black;
+}
+
+/* Group photo with border */
+figure {
+    border: 5px solid black;
+    /* adds a border around the figure */
+    padding: 10px;
+    /* space between border and photo */
+    margin: 20px auto;
+    /* centers the figure */
+    background-color: #f9f9f9;
+    /* optional background */
+    width: fit-content;
+    /* Shrinks the container width to match the internal content */
+}
+
+figure img {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+figcaption {
+    text-align: center;
+}
+
+/* Member contributions */
+.member {
+    border: px solid #000000;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    /* fill the circle without stretching */
+    object-position: center top;
+    /* Positions the alignment of the image within its box */
+    margin-top: -5px;
+    /* move the picture up a little */
+}
+
+.member.left img {
+    float: left;
+    /* pushes the image to the left side of the text block */
+    clip-path: circle(40%);
+    /* Defines a specific shape to "cut out" the visible part of an element */
+    shape-outside: circle(45%);
+    /* Defines a shape for inline content to wrap around */
+}
+
+.member.right img {
+    float: right;
+    /* pushes the image to the right side of the text block */
+    clip-path: circle(40%);
+    /* visually crops the image into a circular shape */
+    shape-outside: circle(45%);
+    /* makes surrounding text wrap around the circular boundary */
+}
+
+.member.right {
+    text-align: right;
+}
+
+dt {
+    font-weight: bold;
+    color: #004080;
+}
+
+dd {
+    margin-left: 1.5em;
+    /* Sets indentation distance for definition descriptions */
+    margin-bottom: 0.3em;
+}
+
+/* Fun facts table */
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.second_table th {
+    font-weight: bold;
+    background-color: #e0e0e0;
+    border: 2px solid #333333;
+    padding: 20px;
+}
+
+.second_table td {
+    border: 2px solid #333333;
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+    /* targets even-numbered rows in a list or table */
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+    /* targets odd-numbered rows in a list or table */
+}
+
+tr:hover {
+    background-color: lightcyan;
+    /* switch to light blue background when hovered*/
+    cursor: pointer;
+    /* Changes the mouse icon when hovering over the element */
+}
+
+.member.right {
+    background: linear-gradient(to right, #7a7a7a 0%, #ffffff 100%);
+    /* Sets a smooth color transition from left to right */
+}
+
+.member.left {
+    background: linear-gradient(to left, #7a7a7a 0%, #ffffff 100%);
+}
+
+/* Animations: define how elements slide in from left or right */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        /* start invisible */
+        transform: translateX(-150px);
+        /* start shifted 150px to the left */
+    }
+
+    to {
+        opacity: 1;
+        /* end fully visible */
+        transform: translateX(0);
+        /* end at normal position */
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        /* start invisible */
+        transform: translateX(150px);
+        /* start shifted 150px to the right */
+    }
+
+    to {
+        opacity: 1;
+        /* end fully visible */
+        transform: translateX(0);
+        /* end at normal position */
+    }
+}
+
+/* Apply animation to Right-aligned members (photo floats right) */
+.member.right {
+    view-timeline-name: --revealing-left;
+    /* create a scroll-linked timeline */
+    view-timeline-axis: block;
+    /* timeline follows block (vertical) axis */
+
+    /* Animation triggers when element enters viewport */
+    animation: slideInLeft linear forwards;
+    /* use slideInLeft animation */
+    animation-timeline: --revealing-left;
+    /* link animation to scroll timeline */
+    animation-range: entry 10% cover 30%;
+    /* start at 10% entry, finish at 30% cover */
+}
+
+/* Apply animation to Left-aligned members (photo floats left) */
+.member.left {
+    view-timeline-name: --revealing-right;
+    /* create a scroll-linked timeline */
+    view-timeline-axis: block;
+    /* timeline follows block (vertical) axis */
+
+    /* Animation triggers when element enters viewport */
+    animation: slideInRight linear forwards;
+    /* use slideInRight animation */
+    animation-timeline: --revealing-right;
+    /* link animation to scroll timeline */
+    animation-range: entry 10% cover 30%;
+    /* start at 10% entry, finish at 30% cover */
+}
+
+/* General styling to ensure the profile pics and info stay together during animation */
+.member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.member.right {
+    flex-direction: row-reverse;
+    /* Reverses the order of children within a flex container */
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+/* --- JOBS.HTML PAGE --- */
+nav.jobs {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.6em;
+    border: 4px solid #ccc;
+    border-radius: 5px;
+    position: fixed;
+    /* Fixes the navigation so it doesn't move during scroll */
+    top: 170px;
+    height: 40px;
+    z-index: 1000;
+}
+
+#description {
+    scroll-margin-top: 300px;
+    /* Adds a margin at the top of an element when it is scrolled */
+}
+
+#position,
+#requirements,
+#benefits {
+    scroll-margin-top: 225px;
+}
+
+.menu {
+    display: inline;
+    /* Sets the element to not start on a new line and only take up necessary witdth */
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu a:hover {
+    color: #3b82f6;
+}
+
+/* Container for the side-by-side columns */
+.row-container {
+    display: flex;
+    flex-direction: row;
+    /* Aligns flex items horizontally in a row */
+    gap: 20px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Add border and equal width to the three sections */
+.mission,
+.needs,
+.vision {
+    flex: 1;
+    /* Dictates that the item should grow to fill equal space within a flex container */
+    border: 3px dotted;
+    /* Sets a border style made of individual dots */
+    padding: 15px;
+    background-color: #ffffff60;
+    /* Sets a background color using Hex code with alpha transparency (60) */
+}
+
+/* Centers the boxes and adds space between them */
+.first_box {
+    border: 1.5px solid black;
+    border-radius: 20px;
+    width: 80%;
+    margin: 50px auto;
+    padding: 40px;
+    text-indent: 10px;
+    /* Specifies the indentation of the first line of text in a block */
+    background-color: #ffffff60;
+}
+
+.first_box.box1 {
+    margin: 10px auto 50px auto;
+}
+
+.title {
+    text-align: center;
+    margin-top: 55px;
+}
+
+.job1-image {
+    float: right;
+    /* Pushes the element to the right, allowing text to wrap around its left side */
+    width: 200px;
+    height: auto;
+    margin-left: 40px;
+    margin-top: -7px;
+    border-radius: 10px;
+}
+
+.job2-image {
+    float: right;
+    width: 200px;
+    height: auto;
+    margin-left: 40px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+.job3-image {
+    float: right;
+    width: 200px;
+    height: auto;
+    margin-left: 40px;
+    margin-top: 22px;
+    border-radius: 10px;
+}
+
+.second_box {
+    border: 15px groove black;
+    /* Sets a 3D border style */
+    border-radius: 5px;
+    width: 45%;
+    min-width: 400px;
+    /* Ensures the element never shrinks below 400px */
+    margin: 50px 0px;
+    padding: 40px;
+    text-indent: 10px;
+    background-color: #ffffff60;
+}
+
+#benefits {
+    border: 4px inset darkblue;
+    /* Sets a 3D border style that makes the element look embedded */
+    border-radius: 14px;
+    width: 25%;
+    margin: -900px auto;
+    padding: 30px;
+    background-color: #ffffff60;
+    float: right;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.requirement,
+.benefits {
+    margin-top: 30px;
+}
+
+.ordered {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+
+
+
+
+
+
+
+/* --- APPLY.HTML PAGE --- */
+#forms {
+    width: 90%;
+    /* On small screens, take up most of the width */
+    padding: 20px;
+    border: 2px solid black;
+    margin: 40px auto;
+    /* Keep it centered */
+    max-width: 600px;
+    /* On big screens, stop growing at 600px so it doesn't look stretched */
+    min-width: 300px;
+    /* Never get smaller than 300px on a phone */
+    border-radius: 10px;
+    box-sizing: border-box;
+    /* Ensures padding doesn't add to the width */
+    background-color: #f8f8f8;
+}
+
+/* Make labels block elements so they sit above inputs */
+label {
+    display: block;
+    /* Forces the element to take up the full width, pushing items below it */
+    margin-top: 15px;
+    /* Adds vertical space above the element */
+    margin-bottom: 5px;
+    /* Adds vertical space below the element */
+    font-weight: bold;
+    /* Increases the thickness of the text strokes */
+}
+
+.name-row {
+    display: grid;
+    /* Enables grid layout for complex alignment */
+    grid-template-columns: 1fr 1fr;
+    /* Splits the row into two equal columns using fractional units */
+    gap: 20px;
+    /* Sets the specific distance between the grid items */
+}
+
+/* Style the text inputs, selects, and textareas */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* Sets a thin 1px light-gray border */
+    border-radius: 4px;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="date"]:hover,
+textarea:hover {
+    background-color: lightblue;
+    /* Changes the fill color when hovered */
+}
+
+select {
+    width: 101%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select:hover {
+    background-color: lightblue;
+}
+
+/* Fieldset styling for Gender and Skill */
+#forms fieldset {
+    width: 95%;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 15px;
+    /* 10px top/bottom and 15px left/right internal spacing */
+}
+
+#forms fieldset:hover {
+    background-color: lightblue;
+}
+
+.Skill {
+    margin-bottom: -10px;
+    /* Pulls the element below it closer by 10px (negative margin) */
+}
+
+/* Inline labels for radios/checkboxes (they shouldn't be block level) */
+#forms fieldset label {
+    display: inline-block;
+    /* Allows the element to sit side-by-side with others while keeping size properties */
+    margin-top: 0;
+    font-weight: normal;
+    /* Resets text thickness to default */
+}
+
+/* Submit Button */
+input[type="submit"] {
+    background-color: darkblue;
+    color: white;
+    /* Sets the color of the text inside the button */
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    /* Removes the default browser border entirely */
+    border-radius: 4px;
+    cursor: pointer;
+    /* Changes the mouse cursor to a 'hand' icon to show it is clickable */
+    margin-top: 20px;
+    font-size: 17px;
+    /* Sets the height/size of the text characters */
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(42, 42, 255);
+    /* Uses Red-Green-Blue values to define a specific shade */
+    color: black;
+}
