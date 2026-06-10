@@ -10,8 +10,10 @@
     <meta name="author" content="Adam Faris" />
     <style>
         .studio {
-            width: 300px; /* Increase this number to make it bigger */
-            height: 250px; /* Keeps the proportions perfect */
+            width: 300px;
+            /* Increase this number to make it bigger */
+            height: 250px;
+            /* Keeps the proportions perfect */
         }
     </style>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -34,10 +36,10 @@
 
             <nav aria-label="Main Navigation">
                 <ul class="nav-menu">
-                    <li><a href="index.html" aria-current="page">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="jobs.html">Job Positions</a></li>
-                    <li><a href="apply.html">Job Application</a></li>
+                    <li><a href="index.php" aria-current="page">Home</a></li>
+                    <li><a href="about.php">About Us</a></li>
+                    <li><a href="jobs.php">Job Positions</a></li>
+                    <li><a href="apply.php">Job Application</a></li>
                 </ul>
             </nav>
         </header>
@@ -72,23 +74,7 @@
             </div>
         </section>
 
-        <footer>
-            <div class="footer-grid">
-                <div class="footer-info">
-                    <p><strong>GameX Studios</strong></p>
-                    <p>Kuala Lumpur, Selangor, Malaysia</p>
-                </div>
-                <div class="footer-links-container">
-                    <ul class="footer-links">
-                        <li><a href="https://github.com/ChanJayShen/Web_project.git" target=_blank>GitHub</a></li>
-                        <li><a href="https://student-team-jr2tz4wq.atlassian.net/jira/software/projects/WP/list?jql=project+%3D+WP+ORDER+BY+cf%5B10019%5D+ASC&atlOrigin=eyJpIjoiYjllNDBiZWZmNjliNGYyZjk2ZTg0MWZmMDQyYzMyNWQiLCJwIjoiaiJ9"
-                                target=_blank>Jira</a></li>
-                        <li><a href="mailto:info@GameXStudios.com" target=_blank>Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <p class="copyright">&copy; 2026 GameX Studios. All rights reserved.</p>
-        </footer>
+        <?php include('footer.inc'); ?>
 
     </div>
 </body>
