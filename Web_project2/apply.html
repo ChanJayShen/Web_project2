@@ -32,7 +32,13 @@
     <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php" id="forms">
         <h1>Application form</h1>
         <label for="Job_ref_num">Job reference number</label>
-        <input type="text" name="Job_ref_num" id="Job_ref_num" required pattern="[a-zA-z0-9]{5}">
+        <select name="Job_ref_num" id="Job_ref_num" required>
+            <option value="">Please Select</option>
+            <option value="UI/UX Designer"> UI011</option>
+            <option value="Engine Programmer">JP020</option>
+            <option value="DevOps Engineer">DO130
+            </option>
+        </select>
 
         <div class="name-row">
             <div class="field">
@@ -114,7 +120,8 @@
             <div class="footer-links-container">
                 <ul class="footer-links">
                     <li><a href="https://github.com/ChanJayShen/Web_project.git" target=_blank>GitHub</a></li>
-                    <li><a href="https://student-team-jr2tz4wq.atlassian.net/jira/software/projects/WP/list?jql=project+%3D+WP+ORDER+BY+cf%5B10019%5D+ASC&atlOrigin=eyJpIjoiYjllNDBiZWZmNjliNGYyZjk2ZTg0MWZmMDQyYzMyNWQiLCJwIjoiaiJ9" target=_blank>Jira</a></li>
+                    <li><a href="https://student-team-jr2tz4wq.atlassian.net/jira/software/projects/WP/list?jql=project+%3D+WP+ORDER+BY+cf%5B10019%5D+ASC&atlOrigin=eyJpIjoiYjllNDBiZWZmNjliNGYyZjk2ZTg0MWZmMDQyYzMyNWQiLCJwIjoiaiJ9"
+                            target=_blank>Jira</a></li>
                     <li><a href="mailto:info@GameXStudios.com" target=_blank>Contact Us</a></li>
                 </ul>
             </div>
