@@ -10,7 +10,7 @@
     <link href="layout.css" rel="stylesheet">
     <title>Job Description</title>
 </head>
-<form action="apply.html" class="button-container">
+<form action="apply.php" class="button-container">
 
     <body id="pos">
 

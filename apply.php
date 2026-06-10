@@ -29,7 +29,7 @@
         </nav>
     </header>
 
-    <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php" id="forms">
+    <form method="post" action="process_eoi.php" id="forms" novalidate>
         <h1>Application form</h1>
         <label for="Job_ref_num">Job reference number</label>
         <select name="Job_ref_num" id="Job_ref_num" required>
