@@ -20,7 +20,7 @@
     <p class="student-id">Adam Faris – 106225472</p>
     <p class="student-id">Boon Xiao Teng – 106399568</p>
     <p class="student-id">Chan Jay Shen – 106627832</p>
-    <p class="student-id">Lau Sheng Meng – J26046158</p>
+    <p class="student-id">Lau Sheng Meng – 106407555</p>
 
     <!-- Group Info -->
     <h2>Team Profile</h2>
