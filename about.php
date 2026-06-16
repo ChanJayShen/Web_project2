@@ -21,10 +21,10 @@
 
     <nav aria-label="Main Navigation">
       <ul class="nav-menu">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="jobs.html">Job Positions</a></li>
-        <li><a href="apply.html">Job Application</a></li>
+        <li><a href="index.php" aria-current="page">Home</a></li>
+        <li><a href="about.php">About Us</a></li>
+        <li><a href="jobs.php">Job Positions</a></li>
+        <li><a href="apply.php">Job Application</a></li>
       </ul>
     </nav>
   </header>
@@ -32,9 +32,9 @@
   <main>
     <!-- Student IDs -->
     <h2 class="student-heading">Student IDs</h2>
-    <p class="student-id">Adam Faris – J23040815</p>
-    <p class="student-id">Boon Xiao Teng – J24042382</p>
-    <p class="student-id">Chan Jay Shen – J25044225</p>
+    <p class="student-id">Adam Faris – 106225472</p>
+    <p class="student-id">Boon Xiao Teng – 106399568</p>
+    <p class="student-id">Chan Jay Shen – 106627832</p>
     <p class="student-id">Lau Sheng Meng – J26046158</p>
 
     <!-- Group Info -->
@@ -145,7 +145,8 @@
         <img src="images/ad.jpeg" alt="Adam" class="profile-pic">
         <div class="info">
           <dt>Adam Faris</dt>
-          <dd>Contribution: CSS styling & Section of Company details Page</dd>
+          <dd>Contribution 1: CSS styling & Section of Company details Page</dd>
+          <dd>Contributuin 2: Reuse common UI with PHP includes and manage.php queries </dd>
           <dd>Quote: "The two most important days in your life are the day you are born and the day you find out why"
             -mark twain</dd>
           <dd>First Language: Bahasa Melayu</dd>
@@ -156,7 +157,8 @@
         <img src="images/xt.jpeg" alt="xiaoteng" class="profile-pic">
         <div class="info">
           <dt>Xiao Teng</dt>
-          <dd>Contribution: CSS styling & Section of Team Profile Page</dd>
+          <dd>Contribution 1: CSS styling & Section of Team Profile Page</dd>
+          <dd>Contribution 2: Database settings and create about table and update about.php</dd>
           <dd>Quote: "Keep calm and carry on"</dd>
           <dd>First Language: Chinese</dd>
         </div>
@@ -166,7 +168,8 @@
         <img src="images/js.jpeg" alt="Jayshen" class="profile-pic">
         <div class="info">
           <dt>Jay Shen</dt>
-          <dd>Contribution: CSS styling & Section of Job Application form Page</dd>
+          <dd>Contribution 1: CSS styling & Section of Job Application form Page</dd>
+          <dd>Contribution 2: Create expression of Interest table and add validated records</dd>
           <dd>Quote: "Philippians 4:13 I can do all things through Christ who strengthen me"</dd>
           <dd>First Language: English </dd>
         </div>
@@ -176,7 +179,8 @@
         <img src="images/sh.jpeg" alt="shengmeng" class="profile-pic">
         <div class="info">
           <dt>Sheng Meng</dt>
-          <dd>Contribution: CSS styling & Section of Job Descriptions page </dd>
+          <dd>Contribution 1: CSS styling & Section of Job Descriptions page </dd>
+          <dd>Contribution 2: Create jobs table and jobs.php</dd>
           <dd>Quote: " I love being interesting"</dd>
           <dd>First Language: Chinese</dd>
         </div>
@@ -228,24 +232,7 @@
     </table>
   </main>
 
-  <footer class:foot>
-    <div class="footer-grid">
-      <div class="footer-info">
-        <p><strong>GameX Studios</strong></p>
-        <p>Kuala Lumpur, Selangor, Malaysia</p>
-      </div>
-      <div class="footer-links-container">
-        <ul class="footer-links">
-          <li><a href="https://github.com/ChanJayShen/Web_project.git" target=_blank>GitHub</a></li>
-          <li><a
-              href="https://student-team-jr2tz4wq.atlassian.net/jira/software/projects/WP/list?jql=project+%3D+WP+ORDER+BY+cf%5B10019%5D+ASC&atlOrigin=eyJpIjoiYjllNDBiZWZmNjliNGYyZjk2ZTg0MWZmMDQyYzMyNWQiLCJwIjoiaiJ9 "
-              target=_blank>Jira</a></li>
-          <li><a href="mailto:info@GameXStudios.com" target=_blank>Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-    <p class="copyright">&copy; 2026 GameX Studios. All rights reserved.</p>
-  </footer>
+  <?php include('footer.inc'); ?>
 
 </body>
 
