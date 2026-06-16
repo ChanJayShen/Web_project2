@@ -19,10 +19,9 @@
         <label for="Job_ref_num">Job reference number</label>
         <select name="Job_ref_num" id="Job_ref_num" required>
             <option value="">Please Select</option>
-            <option value="UI/UX Designer"> UI011</option>
-            <option value="Engine Programmer">JP020</option>
-            <option value="DevOps Engineer">DO130
-            </option>
+            <option value="UI011"> UI011</option>
+            <option value="JP020">JP020</option>
+            <option value="DO130">DO130</option>
         </select>
 
         <div class="name-row">
@@ -96,7 +95,7 @@
         <input type="submit" value="Submit form">
     </form>
 
-    <?php include ('footer.inc'); ?>
+    <?php include('footer.inc'); ?>
 </body>
 
 </html>
