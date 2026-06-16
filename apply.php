@@ -12,32 +12,16 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-content">
-            <a href="index.html" class="logo-link">
-                <img src="images/Logo.png" alt="GameX Studios Logo" class="logo">
-            </a>
-        </div>
-
-        <nav aria-label="Main Navigation">
-            <ul class="nav-menu">
-                <li><a href="index.php" aria-current="page">Home</a></li>
-                <li><a href="about.php">About Us</a></li>
-                <li><a href="jobs.php">Job Positions</a></li>
-                <li><a href="apply.php">Job Application</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include('header.inc'); ?>
 
     <form method="post" action="process_eoi.php" id="forms" novalidate>
         <h1>Application form</h1>
         <label for="Job_ref_num">Job reference number</label>
         <select name="Job_ref_num" id="Job_ref_num" required>
             <option value="">Please Select</option>
-            <option value="UI/UX Designer"> UI011</option>
-            <option value="Engine Programmer">JP020</option>
-            <option value="DevOps Engineer">DO130
-            </option>
+            <option value="UI011"> UI011</option>
+            <option value="JP020">JP020</option>
+            <option value="DO130">DO130</option>
         </select>
 
         <div class="name-row">
@@ -111,7 +95,7 @@
         <input type="submit" value="Submit form">
     </form>
 
-    <?php include ('footer.inc'); ?>
+    <?php include('footer.inc'); ?>
 </body>
 
 </html>
