@@ -1,9 +1,47 @@
 <?php
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location :login.php");
+    exit;
+}
+
+include 'header.inc';
+include 'nav.inc';
+?>
+
+<main>
+    <h2>Manage Expressions of Interest (EOI)</h2>
+
+    <form action="manage.php" method="get" class="searcg-form">
+        <fieldset>
+            <legend>Filter and Sort Applicants</legend>
+
+            <label for="job_reference">Job Reference:</label>
+            <input type="text" id="job_reference" name="job_reference">
+
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name">
+
+            <label for="sort">Sort By:</label>
+            <select id="sort" name="sort">
+                <option value="id">Applicant ID</option>
+                <option value="job_reference">Job Reference</option>
+                <option value="first_name">First Name</option>
+                <option value="last_name">Last Name</option>
+                <option value="status">Status</option>
+            </select>
+
+            <input type="submit" value="Search / Sort">
+    </fieldset>
+</form>
+<br>
+<?php
 require_once "db_connect.php"; 
 
 if ($conn) {
     $sql = "SELECT * FROM eoi WHERE 1=1"; 
-
     if (isset($_GET['job_reference']) && $_GET['job_reference'] != "") {
         $job_ref = mysqli_real_escape_string($conn, $_GET['job_reference']);
         $sql .= " AND job_reference = '$job_ref'";
@@ -21,7 +59,6 @@ if ($conn) {
 
     if (isset($_GET['sort']) && $_GET['sort'] != "") {
         $sort = mysqli_real_escape_string($conn, $_GET['sort']);
-        // Security check: only allow specific columns to be sorted to prevent SQL errors
         $allowed_sorts = array('id', 'job_reference', 'first_name', 'last_name', 'status');
         if (in_array($sort, $allowed_sorts)) {
             $sql .= " ORDER BY $sort";
@@ -60,3 +97,6 @@ if ($conn) {
 
 mysqli_close($conn);
 ?>
+</main>
+
+<?php include 'footer.inc'; ?>
