@@ -3,7 +3,7 @@ USE web_assgn2;
 
 -- Create the table
 CREATE TABLE eoi (
-    eoild INT AUTO_INCREMENT PRIMARY KEY,
+    eoinumber INT AUTO_INCREMENT PRIMARY KEY,
     job_ref_num CHAR(5) NOT NULL,
     f_name VARCHAR(20) NOT NULL,
     l_name VARCHAR(20) NOT NULL,

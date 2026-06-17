@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <body>
     <?php
     function sanitise_input($conn, $data)
@@ -151,7 +152,7 @@
             $err_msg .= "<p>Please select at least one skill.</p>";
         } else {
             // Securely mapping the array fields using an anonymous connection hook
-            $sanitized_skills = array_map(function($item) use ($conn) {
+            $sanitized_skills = array_map(function ($item) use ($conn) {
                 return sanitise_input($conn, $item);
             }, $skill);
             $skills_string = implode(", ", $sanitized_skills);
@@ -173,18 +174,18 @@
         } else {
 
             $create_table_sql = "CREATE TABLE IF NOT EXISTS eoi (
-                eoild INT AUTO_INCREMENT PRIMARY KEY,
+                eoinumber INT AUTO_INCREMENT PRIMARY KEY,
                 job_ref_num CHAR(5) NOT NULL,
-                f_name VARCHAR(50) NOT NULL,
-                l_name VARCHAR(50) NOT NULL,
+                f_name VARCHAR(20) NOT NULL,
+                l_name VARCHAR(20) NOT NULL,
                 date_birth DATE NOT NULL,
                 gender VARCHAR(10) NOT NULL,
                 street_add VARCHAR(40) NOT NULL,
                 suburb_town VARCHAR(40) NOT NULL,
                 state CHAR(3) NOT NULL,
                 postcode CHAR(4) NOT NULL,
-                email VARCHAR(100) NOT NULL,
-                p_num VARCHAR(15) NOT NULL,
+                email VARCHAR(50) NOT NULL,
+                p_num VARCHAR(12) NOT NULL,
                 skills VARCHAR(200),
                 other_skills TEXT,
                 status ENUM('New', 'Current', 'Final') DEFAULT 'New' NOT NULL
@@ -205,16 +206,16 @@
             $result = mysqli_query($conn, $insert_sql);
 
             if ($result) {
-                $last_id = mysqli_insert_id($conn); 
-                
+                $last_id = mysqli_insert_id($conn);
+
                 echo "<h2>Application Submitted Successfully!</h2>";
-                echo "<p>Your Expression of Interest ID is: <strong>$last_id</strong>.</p>";
-                
+                echo "<p>Your Expression of Interest number is: <strong>$last_id</strong>.</p>";
+
                 // Side-by-side Attribute Layout Receipt Table display
                 echo "<h3>Submitted Profile Details</h3>";
                 echo "<table border='1' cellpadding='8' style='border-collapse: collapse; width: 100%; max-width: 600px;'>";
                 echo "<tr style='background-color: #f2f2f2;'><th align='left'>Attribute Name</th><th align='left'>User Input Data</th></tr>";
-                
+
                 echo "<tr><td><strong>EOI Number</strong></td><td>" . $last_id . "</td></tr>";
                 echo "<tr><td><strong>Job Reference</strong></td><td>" . $sanitised_job_ref_num . "</td></tr>";
                 echo "<tr><td><strong>First Name</strong></td><td>" . $sanitised_f_name . "</td></tr>";
@@ -231,7 +232,7 @@
                 echo "<tr><td><strong>Other Skills</strong></td><td>" . (!empty($sanitised_other_skills) ? nl2br($sanitised_other_skills) : "None provided") . "</td></tr>";
                 echo "<tr><td><strong>Application Status</strong></td><td><span style='color: blue; font-weight: bold;'>New</span></td></tr>";
                 echo "</table>";
-                
+
                 echo "<p><a href='apply.php'>Return to Application Form</a></p>";
             }
         }
@@ -241,4 +242,5 @@
 
     ?>
 </body>
+
 </html>
