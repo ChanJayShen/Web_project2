@@ -25,3 +25,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HR Manager Login</title>
+</head>
+<body>
+    <h2>HR Manager Login</h2>
+    
+    <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
+
+    <form action="login.php" method="POST">
+        <p>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+        </p>
+        <p>
+            <input type="submit" value="Login">
+        </p>
+    </form>
+</body>
+</html>
