@@ -11,6 +11,7 @@
               href="https://student-team-jr2tz4wq.atlassian.net/jira/software/projects/WP/list?jql=project+%3D+WP+ORDER+BY+cf%5B10019%5D+ASC&atlOrigin=eyJpIjoiYjllNDBiZWZmNjliNGYyZjk2ZTg0MWZmMDQyYzMyNWQiLCJwIjoiaiJ9 "
               target=_blank>Jira</a></li>
           <li><a href="mailto:info@GameXStudios.com" target=_blank>Contact Us</a></li>
+          <li><a href="login.php">Manager Portal</a></li>
         </ul>
       </div>
     </div>
