@@ -1,25 +1,22 @@
 <?php
 session_start();
 
-// 1. HD GATEKEEPER: Prevent unauthorized access instantly
+// Prevent unauthorized access instantly
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: login.php");
     exit();
 }
 
 require_once "settings.php"; 
-// Connect using your exact settings variables
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 
 if (!$conn) {
     die("<p>Unable to connect to the database engine.</p>");
 }
 
-// -------------------------------------------------------------------------
 // ACTION ENGINE A: PROCESS STATUS UPDATE REQUESTS
-// -------------------------------------------------------------------------
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] == 'update') {
-    // FIX: Using your exact column 'eoinumber'
+    // Using exact column 'eoinumber'
     $update_id = mysqli_real_escape_string($conn, $_POST['update_id']);
     $new_status = mysqli_real_escape_string($conn, $_POST['new_status']);
     
