@@ -82,8 +82,15 @@ $result = mysqli_query($conn, $sql);
     <title>Manager Dashboard</title>
 </head>
 <body>
-    <header>
-        <p>Logged in as: <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong> | <a href="logout.php">Logout</a></p>
+    <header style="background-color: #f4f4f4; padding: 10px 20px; border-bottom: 2px solid #ccc; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            Logged in as: <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>
+        </div>
+        <div>
+            <a href="index.php" style="margin-right: 15px; text-decoration: none; color: #0066cc;">View Main Site</a>
+            
+            <a href="logout.php" style="display: inline-block; padding: 6px 12px; background-color: #d9534f; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9em;">Logout</a>
+        </div>
     </header>
 
     <h2>EOI Management Control Console</h2>
