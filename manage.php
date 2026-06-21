@@ -14,9 +14,11 @@ if (!$conn) {
     die("<p>Unable to connect to the database engine.</p>");
 }
 
-// ACTION ENGINE A: PROCESS STATUS UPDATE REQUESTS
+// ACTION ENGINE A: DROPDOWN STATUS UPDATE REQUESTS
+// if "Change" button next to status dropdown is clicked with tag named 'action' with value 'update'
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] == 'update') {
     // Using exact column 'eoinumber'
+    // Protect against SQL syntax errors
     $update_id = mysqli_real_escape_string($conn, $_POST['update_id']);
     $new_status = mysqli_real_escape_string($conn, $_POST['new_status']);
     
@@ -28,11 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['a
     }
 }
 
-// -------------------------------------------------------------------------
 // ACTION ENGINE B: PROCESS MASS DELETION REQUESTS
-// -------------------------------------------------------------------------
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] == 'delete') {
-    // FIX: Using your exact column 'job_ref_num'
+    // Protect against SQL syntax errors
     $del_job_ref = mysqli_real_escape_string($conn, $_POST['delete_job_reference']);
     
     $delete_sql = "DELETE FROM eoi WHERE job_ref_num = '$del_job_ref'";
@@ -43,14 +43,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['a
     }
 }
 
-// -------------------------------------------------------------------------
 // REGENERATIVE QUERY CONSTRUCTION (READ ENGINE)
-// -------------------------------------------------------------------------
 $sql = "SELECT * FROM eoi WHERE 1=1"; 
 
-// FIX: Aligned all search filters to match your actual table columns
+// Check if Manager typed something into the Job Reference Box. If yes, sanitize the string.
 if (isset($_GET['job_reference']) && $_GET['job_reference'] != "") {
     $job_ref = mysqli_real_escape_string($conn, $_GET['job_reference']);
+    // narrowing down the results
     $sql .= " AND job_ref_num = '$job_ref'";
 }
 if (isset($_GET['first_name']) && $_GET['first_name'] != "") {
@@ -62,7 +61,6 @@ if (isset($_GET['last_name']) && $_GET['last_name'] != "") {
     $sql .= " AND l_name LIKE '%$lname%'";
 }
 
-// FIX: Sorting logic configured for your real column variables
 $sort = isset($_GET['sort']) ? $_GET['sort'] : 'eoinumber';
 $allowed_sorts = array('eoinumber', 'job_ref_num', 'f_name', 'l_name', 'status');
 if (in_array($sort, $allowed_sorts)) {
@@ -144,7 +142,6 @@ $result = mysqli_query($conn, $sql);
               
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            // FIX: Updated all output cells to use your exact layout columns
             echo "<td>" . htmlspecialchars($row['eoinumber']) . "</td>";
             echo "<td>" . htmlspecialchars($row['job_ref_num']) . "</td>";
             echo "<td>" . htmlspecialchars($row['f_name']) . "</td>";

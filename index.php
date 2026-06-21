@@ -40,7 +40,7 @@
             <div class="hero-text">
                 <h1>Shape the Future of Play</h1>
                 <p>Join Kuala Lumpur's leading game studio in building the next generation of RPGs.</p>
-                <a href="jobs.html" class="cta-button">View Openings</a>
+                <a href="jobs.php" class="cta-button">View Openings</a>
             </div>
         </section>
 
@@ -52,7 +52,7 @@
                     We specialize in building immersive, high-performance experiences that push the boundaries
                     of digital content creation.
                 </p>
-                <a href="index.html" class="logo-link">
+                <a href="index.php" class="logo-link">
                     <img src="images/studio.png" alt="Small game studio" class="studio">
                     <div class="brand-text">GameX Studios</div>
                 </a>
