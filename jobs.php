@@ -7,14 +7,14 @@
     <meta name="keywords" content="Job, Description, Positions, Requirements, Benefits" />
     <meta name="author" content="Sheng Meng" />
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link href="layout.css" rel="stylesheet">
+    <link href="styles/layout.css" rel="stylesheet">
     <title>Job Description</title>
 </head>
 <form action="apply.php" class="button-container">
 
     <body id="pos">
 
-        <?php include('header.inc'); ?>
+        <?php include('inc_files/header.inc'); ?>
 
         <main>
             <nav class="jobs">
@@ -136,7 +136,7 @@
         </main>
 </form>
 
-<?php include('footer.inc'); ?>
+<?php include('inc_files/footer.inc'); ?>
 
 </body>
 

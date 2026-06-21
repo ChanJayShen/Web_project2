@@ -237,7 +237,7 @@
             }
         }
     } else {
-        header("location:apply.php"); //Redirect to the form
+        header("location: apply.php"); //Redirect to the form
     }
 
     ?>
