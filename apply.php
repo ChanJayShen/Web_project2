@@ -7,12 +7,12 @@
     <meta name="keywords" content="Job application, User information">
     <meta name="author" content="Joseph">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link href="layout.css" rel="stylesheet">
+    <link href="styles/layout.css" rel="stylesheet">
     <title> Job application form </title>
 </head>
 
 <body>
-    <?php include('header.inc'); ?>
+    <?php include('inc_files/header.inc'); ?>
 
     <form method="post" action="process_eoi.php" id="forms" novalidate>
         <h1>Application form</h1>
@@ -95,7 +95,7 @@
         <input type="submit" value="Submit form">
     </form>
 
-    <?php include('footer.inc'); ?>
+    <?php include('inc_files/footer.inc'); ?>
 </body>
 
 </html>

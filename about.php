@@ -7,12 +7,12 @@
   <meta name="keywords" content="Team profile, Member contributions and quotes, Fun facts" />
   <meta name="author" content="Xiao Teng" />
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <link href="layout.css" rel="stylesheet">
+  <link href="styles/layout.css" rel="stylesheet">
   <title>About us</title>
 </head>
 
 <body>
-  <?php include('header.inc'); ?>
+  <?php include('inc_files/header.inc'); ?>
 
   <main>
     <!-- Student IDs -->
@@ -217,7 +217,7 @@
     </table>
   </main>
 
-  <?php include('footer.inc'); ?>
+  <?php include('inc_files/footer.inc'); ?>
 
 </body>
 

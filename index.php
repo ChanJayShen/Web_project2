@@ -27,7 +27,7 @@
 
     <div class="site-container">
 
-        <?php include('header.inc'); ?>
+        <?php include('inc_files/header.inc'); ?>
 
 
 
@@ -59,7 +59,7 @@
             </div>
         </section>
 
-        <?php include('footer.inc'); ?>
+        <?php include('inc_files/footer.inc'); ?>
 
     </div>
 </body>
