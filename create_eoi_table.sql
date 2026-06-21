@@ -1,7 +1,5 @@
--- Tell the server which database to use (replace with your actual DB name)
 USE web_assgn2;
 
--- Create the table
 CREATE TABLE eoi (
     eoinumber INT AUTO_INCREMENT PRIMARY KEY,
     job_ref_num CHAR(5) NOT NULL,

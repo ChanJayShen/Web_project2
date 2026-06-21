@@ -21,7 +21,7 @@
             die("<p>Database connection failed. Processing stopped.</p>");
         }
 
-        $job_ref_num = $_POST["Job_ref_num"] ?? ""; //If there is value, assign the user input value to variable. If no value, then assign an empty string
+        $job_ref_num = $_POST["Job_ref_num"] ?? ""; //If there is value, assign the user input value to variable. If no value, then assign an empty string.
         $f_name = $_POST["F_name"] ?? "";
         $l_name = $_POST["L_name"] ?? "";
         $date_birth = $_POST["Date_birth"] ?? "";
@@ -113,7 +113,7 @@
             $sanitised_state = sanitise_input($conn, $state);
             $valid_states = ["VIC", "NSW", "QLD", "NT", "WA", "SA", "TAS", "ACT"];
             if (!in_array($sanitised_state, $valid_states)) {
-                $err_msg .= "<p>Please select a valid Australian state.</p>";
+                $err_msg .= "<p>Please select a valid state.</p>";
             }
         }
 

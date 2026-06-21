@@ -18,7 +18,7 @@
     </style>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>GameX Studios | Game Dev Careers</title>
-    <link href="layout.css" rel="stylesheet">
+    <link href="styles/layout.css" rel="stylesheet">
 </head>
 
 
@@ -33,7 +33,7 @@
 
         <section class="hero">
             <video autoplay muted loop playsinline preload="auto" poster="images/video-fallback.jpg" id="bg-video">
-                <source src="images/Freefire.mp4" type="video/mp4">
+                <source src="styles/images/Freefire.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
 
