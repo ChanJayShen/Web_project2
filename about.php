@@ -7,12 +7,12 @@
   <meta name="keywords" content="Team profile, Member contributions and quotes, Fun facts" />
   <meta name="author" content="Xiao Teng" />
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <link href="layout.css" rel="stylesheet">
+  <link href="styles/layout.css" rel="stylesheet">
   <title>About us</title>
 </head>
 
 <body>
-  <?php include('header.inc'); ?>
+  <?php include('inc_files/header.inc'); ?>
 
   <main>
     <!-- Student IDs -->
@@ -143,7 +143,7 @@
         <div class="info">
           <dt>Xiao Teng</dt>
           <dd>Contribution 1: CSS styling & Section of Team Profile Page</dd>
-          <dd>Contribution 2: Database settings and create about table and update about.php</dd>
+          <dd>Contribution 2: Database settings, update about.php and  coordinating all member workflows</dd>
           <dd>Quote: "Keep calm and carry on"</dd>
           <dd>First Language: Chinese</dd>
         </div>
@@ -217,7 +217,7 @@
     </table>
   </main>
 
-  <?php include('footer.inc'); ?>
+  <?php include('inc_files/footer.inc'); ?>
 
 </body>
 
