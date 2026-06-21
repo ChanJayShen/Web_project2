@@ -143,7 +143,7 @@
         <div class="info">
           <dt>Xiao Teng</dt>
           <dd>Contribution 1: CSS styling & Section of Team Profile Page</dd>
-          <dd>Contribution 2: Database settings and create about table and update about.php</dd>
+          <dd>Contribution 2: Database settings, update about.php and  coordinating all member workflows</dd>
           <dd>Quote: "Keep calm and carry on"</dd>
           <dd>First Language: Chinese</dd>
         </div>
