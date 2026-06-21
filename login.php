@@ -116,7 +116,7 @@ mysqli_close($conn);
         </p>
     </form>
 
-    <a href="index.php" class="back-home">← Return to Public Website</a>
+    <a href="index.php" class="back-home" style="color: blue;">Return to Public Website</a>
 </body>
 
 </html>
